@@ -1,0 +1,59 @@
+{
+  "name": "@dev-thought/nestjs-github-webhooks",
+  "version": "1.0.0",
+  "description": "Connect your Github webhooks with NestJs - modern, fast, powerful node.js web framework",
+  "author": "Mitko Tschimev",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsc -p tsconfig.json",
+    "format": "prettier **/**/*.ts --ignore-path ./.prettierignore --write",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public",
+    "prepublish:next": "npm run build",
+    "publish:next": "npm publish --access public --tag next",
+    "test:integration": "jest --config ./tests/jest-e2e.json"
+  },
+  "devDependencies": {
+    "@nestjs/common": "6.10.7",
+    "@nestjs/core": "6.10.7",
+    "@nestjs/platform-express": "6.10.7",
+    "@nestjs/testing": "6.10.7",
+    "@types/jest": "24.0.23",
+    "@types/node": "12.12.14",
+    "@types/normalize-path": "3.0.0",
+    "@types/supertest": "^2.0.8",
+    "class-transformer": "0.2.3",
+    "husky": "3.1.0",
+    "jest": "24.9.0",
+    "lint-staged": "9.5.0",
+    "prettier": "1.19.1",
+    "reflect-metadata": "0.1.13",
+    "supertest": "4.0.2",
+    "ts-jest": "24.2.0",
+    "ts-node": "8.5.4",
+    "typescript": "3.7.3"
+  },
+  "dependencies": {
+    "uuid": "^3.3.3"
+  },
+  "peerDependencies": {
+    "@nestjs/core": "^6.4.0",
+    "graphql": "^14.1.1",
+    "reflect-metadata": "^0.1.12"
+  },
+  "optionalDependencies": {
+    "type-graphql": "^0.17.3"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --ignore-path ./.prettierignore --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
