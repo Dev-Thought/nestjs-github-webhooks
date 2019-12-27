@@ -81,7 +81,7 @@ export class AppController {
 
 ## Tutorial
 
-You can read more about this integration [coming soon]()
+You can read more about this integration [here](https://medium.com/dev-thought/github-webhooks-with-nestjs-1e97c17418f6)
 
 ## Support
 
