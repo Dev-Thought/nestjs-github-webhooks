@@ -32,7 +32,11 @@ $ npm i --save @dev-thought/nestjs-github-webhooks
 
 ### Import module
 
+In `app.module.ts`:
+
 ```typescript
+import { GithubWebhooksModule } from '@dev-thought/nestjs-github-webhooks';
+
 @Module({
   imports: [
     ...
@@ -61,6 +65,11 @@ class AppModule {}
 ### Use the guard
 
 ```typescript
+import {
+  GithubGuard,
+  GithubWebhookEvents,
+} from '@dev-thought/nestjs-github-webhooks';
+
 @Controller()
 export class AppController {
 
